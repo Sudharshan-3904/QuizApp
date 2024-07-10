@@ -27,10 +27,9 @@ let page_number = 0;
 var min_dis_ind = 0;
 var max_dis_ind = questions_per_page;
 const total_question = quiz_answers.length;
-// const total_question = quiz_answers.length;
 
 async function sleep(ms) {
-    await new Promise((r) => setTimeout(r, 750));
+    await new Promise((r) => setTimeout(r, ms));
 }
 
 function isEqual(a, b) {
@@ -38,49 +37,40 @@ function isEqual(a, b) {
 }
 
 function checkAns(quesInd) {
-    current_type = document.getElementById(`question_${quesInd}_type`).innerHTML;
-    var current_answer;
-    var current_answers = new Array();
-    if (current_type == "text") {
+    const current_type = document.getElementById(`question_${quesInd}_type`).innerHTML;
+    let current_answer;
+    let current_answers = [];
+
+    if (current_type === "text") {
         current_answer = document.getElementById(`answer_${quesInd}`).firstChild.value;
-        console.log(`ans : ${quiz_answers[quesInd]}`);
-        console.log(`inp : ${current_answer}`);
-        if (current_answer == quiz_answers[quesInd]) {
+        if (current_answer === quiz_answers[quesInd]) {
             user_score++;
         }
-    } else if (current_type == "radio") {
+    } else if (current_type === "radio") {
         let options = document.getElementsByName(`answer_${quesInd}`);
         for (let option of options) {
             if (option.checked) {
                 current_answer = option.value;
             }
         }
-        console.log(`ans : ${quiz_answers[quesInd]}`);
-        console.log(`inp : ${current_answer}`);
         if (current_answer === quiz_answers[quesInd]) {
             user_score++;
         }
-    } else if (current_type == "checkbox") {
+    } else if (current_type === "checkbox") {
         let options = document.getElementsByName(`answer_${quesInd}`);
         for (let option of options) {
             if (option.checked) {
                 current_answers.push(option.value);
             }
         }
-        console.log(`ans : ${quiz_answers[quesInd]}`);
-        console.log(`inp : ${current_answers}`);
         if (isEqual(quiz_answers[quesInd], current_answers)) {
             user_score++;
         }
-    } else if (current_type == "dropdown") {
+    } else if (current_type === "dropdown") {
         current_answer = document.getElementById(`answer_${quesInd}`).value;
-        console.log(`ans : ${quiz_answers[quesInd]}`);
-        console.log(`inp : ${current_answer}`);
         if (current_answer === quiz_answers[quesInd]) {
             user_score++;
         }
-    } else {
-        console.log(current_type);
     }
 }
 
@@ -110,45 +100,37 @@ function startCountdown(duration) {
 }
 
 function clear_parent() {
-    if (page_number == 0) {
+    if (page_number === 0) {
         return;
     }
-    for (var i = 0; i < total_question; i++) {
-        console.log();
+    for (let i = 0; i < total_question; i++) {
         document.getElementById(`qa_section_${i}`).classList.add("qa_hidden");
     }
 }
 
 function prevQues() {
-    page_number--;
-    if (page_number < 0) {
-        page_number = 0;
-        document.getElementById("user_info").innerHTML = "This is the first Page";
-    } else {
+    if (page_number > 0) {
+        page_number--;
         min_dis_ind -= questions_per_page;
         max_dis_ind -= questions_per_page;
         show_current_question();
+    } else {
+        document.getElementById("user_info").innerHTML = "This is the first Page";
     }
 }
 
 function nextQues() {
-    page_number++;
-    if (page_number == Math.floor(total_question / questions_per_page)) {
-        end_quiz();
-    } else {
+    if ((page_number + 2) <= Math.floor(total_question / questions_per_page)) {
+        page_number++;
         min_dis_ind += questions_per_page;
         max_dis_ind += questions_per_page;
         show_current_question();
+    } else {
+        end_quiz();
     }
 }
 
 function startQuiz() {
-    for (let z = min_dis_ind; z < max_dis_ind; z++) {
-        var current_index = page_number * questions_per_page + z;
-        document.getElementById(`qa_section_${current_index}`).classList.remove("qa_hidden");
-        // document.getElementById(`qa_section_${current_index}`).style.display = "none";
-        // document.getElementById(`qa_section_${current_index}`).style.visibility = "visible";
-    }
     startCountdown(300);
     document.getElementById("start_screen").style.display = "none";
     document.getElementById("mainBox").style.display = "block";
@@ -156,7 +138,6 @@ function startQuiz() {
 }
 
 function end_quiz() {
-    console.log("Called");
     for (let ans_ind = 0; ans_ind < total_question; ans_ind++) {
         checkAns(ans_ind);
     }
@@ -164,12 +145,12 @@ function end_quiz() {
 }
 
 function show_current_question() {
-    if (page_number == 0) {
+    if (page_number === 0) {
         document.getElementById("previous_button").style.display = "none";
     } else {
         document.getElementById("previous_button").style.display = "inline";
     }
-    if (page_number + 1 == Math.floor(total_question / questions_per_page)) {
+    if (page_number + 1 === Math.floor(total_question / questions_per_page)) {
         document.getElementById("next_button").innerText = "Submit";
     } else {
         document.getElementById("next_button").innerText = "Next";
@@ -177,17 +158,12 @@ function show_current_question() {
     clear_parent();
 
     for (let current_index = min_dis_ind; current_index < max_dis_ind; current_index++) {
-        // document.getElementById(`qa_section_${current_index}`).classList.pop("qa_hidden");
         document.getElementById(`qa_section_${current_index}`).classList.remove("qa_hidden");
-        document.getElementById(`qa_section_${current_index}`).classList.add("qa_shown");
-        // console.log(document.getElementById(`qa_section_${current_index}`).className);
-        // console.log(`qa_section_${current_index}`);
     }
 }
 
 function end_screen() {
     clear_parent();
-
     document.getElementById("qa_container").style.display = "none";
     document.getElementById("nav").style.display = "none";
     document.getElementById("timer_container").style.display = "none";

@@ -1,20 +1,35 @@
 body {
-    background-image: url("../images/cosmos-1853491.jpg");
+    background-image: url("./images/cosmos-1853491.jpg");
     background-size: cover;
     background-position: center;
-    color: beige;
-    margin: 3px;
-    padding: 5px;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 h6 {
     display: none;
 }
 
-div.qa_shown {
+h1 {
+    font-family: "Merriweather", serif;
+    font-size: 3rem;
+    text-align: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    padding: 20px;
+}
+
+/* div.qa_shown {
     display: block;
     visibility: visible;
-}
+} */
 
 div.qa_hidden {
     display: none;
@@ -27,33 +42,40 @@ div.qa_hidden {
 div.qa_subcontainer {
     text-align: left;
     border-radius: 10px;
-    margin: 2px;
-    padding: 2px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 div#start_screen {
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-align: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    padding: 20px;
 }
 
 button#start_quiz_button {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-align: center;
     align-items: center;
-    margin: 5px;
-    background: rgba(255, 255, 255, 0.08);
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 div#mainBox {
@@ -65,63 +87,79 @@ span {
 }
 
 div#timer_container {
-    border: 1px solid white;
+    border: 1px solid #ffffff;
     border-radius: 5px;
-    margin: 5px;
-    padding: 3px;
+    margin: 10px;
+    padding: 5px 10px;
     line-height: 30px;
     display: inline;
     position: absolute;
     top: 3%;
     right: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
 }
 
 button {
-    border: 1px solid moccasin;
+    border: 1px solid #ffffff;
     border-radius: 10px;
-    background-color: transparent;
-    color: beige;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 div#qa_container {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    color: #ffffff;
 }
 
 select {
     width: min-content;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 #end_screen {
-    font-size: 1.8rem;
+    font-size: 2rem;
     align-items: center;
     text-align: center;
     display: none;
     justify-content: center;
     position: absolute;
     width: 100%;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    padding: 20px;
 }
 
 #retake_button {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     position: sticky;
     left: 75%;
     bottom: 5px;
-    margin: 6px;
-    background: rgba(255, 255, 255, 0.08);
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
 }
