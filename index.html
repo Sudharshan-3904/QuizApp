@@ -7,57 +7,370 @@
     <script defer src="index.js"></script>
 </head>
 
-<body onload="show_current_question()">
+<body">
     <h1>Quiz App</h1>
     <div id="start_screen">
         Click to start Quiz<br>
-        <button type="button" id = "start_quiz_button" onclick="startQuiz()">Start Quiz</button>
+        <button type="button" id="start_quiz_button" onclick="startQuiz()">Start Quiz</button>
     </div>
 
     <div id="mainBox">
         <div id="timer_container">
             <span id="timer">00:00</span>
         </div>
-        <!-- <div id="start_screen">
-            Click to start Quiz<br>
-            <button type="button" onclick="startQuiz()">Start Quiz</button>
-        </div> -->
         <div id="qa_container">
-            <div class="qa_section">
-                <div>
-                    <p id="current_question_0"></p>
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_0">
+                <h6 id="question_0_type">radio</h6>
+                <p id="question_0">What is the Big Bang Theory ?</p>
+                <div id="answer_0">
+                    <input type="radio" id="answer_0_option_1" name="answer_0"
+                        value="A theory about the creation of the universe">
+                    <label for="answer_0_option_1" id="answer_0_option_1_label">A theory about the creation of the
+                        universe</label><br>
+
+                    <input type="radio" id="answer_0_option_2" name="answer_0" value="A TV show">
+                    <label for="answer_0_option_2" id="answer_0_option_2_label">A TV show</label><br>
+
+                    <input type="radio" id="answer_0_option_3" name="answer_0" value="A theory about black holes">
+                    <label for="answer_0_option_3" id="answer_0_option_3_label">A theory about black holes</label><br>
+
+                    <input type="radio" id="answer_0_option_4" name="answer_0"
+                        value="A theory about the end of the universe">
+                    <label for="answer_0_option_4" id="answer_0_option_4_label">A theory about the end of the
+                        universe</label>
                 </div>
-                <div id="current_answers_0"></div>
-            </div>
-            <hr>
-            <div class="qa_section">
-                <div>
-                    <p id="current_question_1"></p>
-                </div>
-                <div id="current_answers_1"></div>
-            </div>
-            <hr>
-            <div class="qa_section">
-                <div>
-                    <p id="current_question_2"></p>
-                </div>
-                <div id="current_answers_2"></div>
-            </div>
-            <hr>
-            <div class="qa_section">
-                <div>
-                    <p id="current_question_3"></p>
-                </div>
-                <div id="current_answers_3"></div>
-            </div>
-            <hr>
-            <div class="qa_section">
-                <div>
-                    <p id="current_question_4"></p>
-                </div>
-                <div id="current_answers_4"></div>
             </div>
         </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_1">
+                <h6 id="question_1_type">dropdown</h6>
+                <p id="question_1">What is a light year ?</p>
+                <div id="answer_1">
+                    <select id="answer_1" name="answer_1">
+                        <option id="answer_1_option_1" value="The time it takes for light to travel around the Earth">
+                            The time it takes for light to travel around the Earth</option>
+                        <option id="answer_1_option_2" value="The distance light travels in one year">The distance light
+                            travels in one year</option>
+                        <option id="answer_1_option_3" value="The time it takes for the Earth to orbit the Sun">The time
+                            it takes for the Earth to orbit the Sun</option>
+                        <option id="answer_1_option_4" value="The distance between the Earth and the Sun">The distance
+                            between the Earth and the Sun</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_2">
+                <h6 id="question_2_type">checkbox</h6>
+                <p id="question_2">Which elements are most abundant in the universe ?</p>
+                <div id="answer_2">
+                    <input type="checkbox" id="answer_2_option_1" name="answer_2" value="Oxygen">
+                    <label for="answer_2_option_1" id="answer_2_option_1_label">Oxygen</label><br>
+
+                    <input type="checkbox" id="answer_2_option_2" name="answer_2" value="Carbon">
+                    <label for="answer_2_option_2" id="answer_2_option_2_label">Carbon</label><br>
+
+                    <input type="checkbox" id="answer_2_option_3" name="answer_2" value="Hydrogen">
+                    <label for="answer_2_option_3" id="answer_2_option_3_label">Hydrogen</label><br>
+
+                    <input type="checkbox" id="answer_2_option_4" name="answer_2" value="Helium">
+                    <label for="answer_2_option_4" id="answer_2_option_4_label">Helium</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_3">
+                <h6 id="question_3_type">text</h6>
+                <p id="question_3">What is the name of our galaxy ?</p>
+                <div id="answer_3">
+                    <input type="text" id="answer_3" name="answer_3">
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_4">
+                <h6 id="question_4_type">radio</h6>
+                <p id="question_4">Who proposed the theory of general relativity ?</p>
+                <div id="answer_4">
+                    <input type="radio" id="answer_4_option_1" name="answer_4" value="Isaac Newton">
+                    <label for="answer_4_option_1" id="answer_4_option_1_label">Isaac Newton</label><br>
+
+                    <input type="radio" id="answer_4_option_2" name="answer_4" value="Albert Einstein">
+                    <label for="answer_4_option_2" id="answer_4_option_2_label">Albert Einstein</label><br>
+
+                    <input type="radio" id="answer_4_option_3" name="answer_4" value="Galileo Galilei">
+                    <label for="answer_4_option_3" id="answer_4_option_3_label">Galileo Galilei</label><br>
+
+                    <input type="radio" id="answer_4_option_4" name="answer_4" value="Niels Bohr">
+                    <label for="answer_4_option_4" id="answer_4_option_4_label">Niels Bohr</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_5">
+                <h6 id="question_5_type">dropdown</h6>
+                <p id="question_5">What is dark matter ?</p>
+                <div id="answer_5">
+                    <select id="answer_5" name="answer_5">
+                        <option id="answer_5_option_1" value="A type of black hole">
+                            A type of black hole</option>
+                        <option id="answer_5_option_2" value="Invisible matter that doesn't emit light">Invisible matter
+                            that doesn't emit light</option>
+                        <option id="answer_5_option_3" value="Antimatter">Antimatter</option>
+                        <option id="answer_5_option_4" value="A type of neutron star">A type of neutron star</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_6">
+                <h6 id="question_6_type">checkbox</h6>
+                <p id="question_6">Which of these is a type of galaxy ?</p>
+                <div id="answer_6">
+                    <input type="checkbox" id="answer_6_option_1" name="answer_6" value="Spiral">
+                    <label for="answer_6_option_1" id="answer_6_option_1_label">Spiral</label><br>
+
+                    <input type="checkbox" id="answer_6_option_2" name="answer_6" value="Circular">
+                    <label for="answer_6_option_2" id="answer_6_option_2_label">Circular</label><br>
+
+                    <input type="checkbox" id="answer_6_option_3" name="answer_6" value="Elliptical">
+                    <label for="answer_6_option_3" id="answer_6_option_3_label">Elliptical</label><br>
+
+                    <input type="checkbox" id="answer_6_option_4" name="answer_6" value="Irregular">
+                    <label for="answer_6_option_4" id="answer_6_option_4_label">Irregular</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_7">
+                <h6 id="question_7_type">text</h6>
+                <p id="question_7">What is a black hole ?</p>
+                <div id="answer_7">
+                    <input type="text" id="answer_7" name="answer_7">
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_8">
+                <h6 id="question_8_type">radio</h6>
+                <p id="question_8">Who discovered the expanding universe ?</p>
+                <div id="answer_8">
+                    <input type="radio" id="answer_8_option_1" name="answer_8" value="Edwin Hubble">
+                    <label for="answer_8_option_1" id="answer_8_option_1_label">Edwin Hubble</label><br>
+
+                    <input type="radio" id="answer_8_option_2" name="answer_8" value="Stephen Hawking">
+                    <label for="answer_8_option_2" id="answer_8_option_2_label">Stephen Hawking</label><br>
+
+                    <input type="radio" id="answer_8_option_3" name="answer_8" value="Carl Sagan">
+                    <label for="answer_8_option_3" id="answer_8_option_3_label">Carl Sagan</label><br>
+
+                    <input type="radio" id="answer_8_option_4" name="answer_8" value="Neil deGrasse Tyson">
+                    <label for="answer_8_option_4" id="answer_8_option_4_label">Neil deGrasse Tyson</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_9">
+                <h6 id="question_9_type">dropdown</h6>
+                <p id="question_9">What is the cosmic microwave background radiation ?</p>
+                <div id="answer_9">
+                    <select id="answer_9" name="answer_9">
+                        <option id="answer_9_option_1" value="Radiation from stars">
+                            Radiation from stars</option>
+                        <option id="answer_9_option_2" value="Leftover radiation from the Big Bang">Leftover radiation
+                            from the Big Bang</option>
+                        <option id="answer_9_option_3" value="Radiation from black holes">Radiation from black holes
+                        </option>
+                        <option id="answer_9_option_4" value="Radiation from supernovae">Radiation from supernovae
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_10">
+                <h6 id="question_10_type">checkbox</h6>
+                <p id="question_10">Which theory explains the formation of the solar system and the universe ?</p>
+                <div id="answer_10">
+                    <input type="checkbox" id="answer_10_option_1" name="answer_10" value="Steady State Theory">
+                    <label for="answer_10_option_1" id="answer_10_option_1_label">Steady State Theory</label><br>
+
+                    <input type="checkbox" id="answer_10_option_2" name="answer_10" value="Big Bang Theory">
+                    <label for="answer_10_option_2" id="answer_10_option_2_label">Big Bang Theory</label><br>
+
+                    <input type="checkbox" id="answer_10_option_3" name="answer_10" value="Nebular Hypothesis">
+                    <label for="answer_10_option_3" id="answer_10_option_3_label">Nebular Hypothesis</label><br>
+
+                    <input type="checkbox" id="answer_10_option_4" name="answer_10" value="String Theory">
+                    <label for="answer_10_option_4" id="answer_10_option_4_label">String Theory</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_11">
+                <h6 id="question_11_type">text</h6>
+                <p id="question_11">What is the approximate age of the universe ?</p>
+                <div id="answer_11">
+                    <input type="text" id="answer_11" name="answer_11">
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_12">
+                <h6 id="question_12_type">radio</h6>
+                <p id="question_12">Which planet is known as the 'Red Planet' ?</p>
+                <div id="answer_12">
+                    <input type="radio" id="answer_12_option_1" name="answer_12" value="Venus">
+                    <label for="answer_12_option_1" id="answer_12_option_1_label">Venus</label><br>
+
+                    <input type="radio" id="answer_12_option_2" name="answer_12" value="Saturn">
+                    <label for="answer_12_option_2" id="answer_12_option_2_label">Saturn</label><br>
+
+                    <input type="radio" id="answer_12_option_3" name="answer_12" value="Mars">
+                    <label for="answer_12_option_3" id="answer_12_option_3_label">Mars</label><br>
+
+                    <input type="radio" id="answer_12_option_4" name="answer_12" value="Jupiter">
+                    <label for="answer_12_option_4" id="answer_12_option_4_label">Jupiter</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_13">
+                <h6 id="question_13_type">dropdown</h6>
+                <p id="question_13">What is a supernova ?</p>
+                <div id="answer_13">
+                    <select id="answer_13" name="answer_13">
+                        <option id="answer_13_option_1" value="A new star forming">
+                            A new star forming</option>
+                        <option id="answer_13_option_2" value="The explosion of a star">The explosion of a star</option>
+                        <option id="answer_13_option_3" value="A type of black hole">A type of black hole
+                        </option>
+                        <option id="answer_13_option_4" value="The collapse of a star">The collapse of a star
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_14">
+                <h6 id="question_14_type">checkbox</h6>
+                <p id="question_14">What is Gargantua ?</p>
+                <div id="answer_14">
+                    <input type="checkbox" id="answer_14_option_1" name="answer_14" value="A black hole">
+                    <label for="answer_14_option_1" id="answer_14_option_1_label">A black hole</label><br>
+
+                    <input type="checkbox" id="answer_14_option_2" name="answer_14" value="A Measure of black hole">
+                    <label for="answer_14_option_2" id="answer_14_option_2_label">A Measure of black hole</label><br>
+
+                    <input type="checkbox" id="answer_14_option_3" name="answer_14" value="Orbited by Miller and Mann">
+                    <label for="answer_14_option_3" id="answer_14_option_3_label">Orbited by Miller and Mann</label><br>
+
+                    <input type="checkbox" id="answer_14_option_4" name="answer_14" value="A type of galaxy">
+                    <label for="answer_14_option_4" id="answer_14_option_4_label">A type of galaxy</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_15">
+                <h6 id="question_15_type">text</h6>
+                <p id="question_15">What force holds galaxies together ?</p>
+                <div id="answer_15">
+                    <input type="text" id="answer_15" name="answer_15">
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_16">
+                <h6 id="question_16_type">radio</h6>
+                <p id="question_16">Which of these is not a type of telescope ?</p>
+                <div id="answer_16">
+                    <input type="radio" id="answer_16_option_1" name="answer_16" value="Optical">
+                    <label for="answer_16_option_1" id="answer_16_option_1_label">Optical</label><br>
+
+                    <input type="radio" id="answer_16_option_2" name="answer_16" value="Radio">
+                    <label for="answer_16_option_2" id="answer_16_option_2_label">Radio</label><br>
+
+                    <input type="radio" id="answer_16_option_3" name="answer_16" value="Infrared">
+                    <label for="answer_16_option_3" id="answer_16_option_3_label">Infrared</label><br>
+
+                    <input type="radio" id="answer_16_option_4" name="answer_16" value="Ultrasound">
+                    <label for="answer_16_option_4" id="answer_16_option_4_label">Ultrasound</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_17">
+                <h6 id="question_17_type">dropdown</h6>
+                <p id="question_17">What are the main components of stars ?</p>
+                <div id="answer_17">
+                    <select id="answer_17" name="answer_17">
+                        <option id="answer_17_option_1" value="Hydrogen">
+                            Hydrogen</option>
+                        <option id="answer_17_option_2" value="Helium">Helium</option>
+                        <option id="answer_17_option_3" value="Carbon">Carbon
+                        </option>
+                        <option id="answer_17_option_4" value="Oxygen">Oxygen
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_18">
+                <h6 id="question_18_type">checkbox</h6>
+                <p id="question_18">What is the event horizon of a black hole ?</p>
+                <div id="answer_18">
+                    <input type="checkbox" id="answer_18_option_1" name="answer_18"
+                        value="The point beyond which nothing can escape">
+                    <label for="answer_18_option_1" id="answer_18_option_1_label">The point beyond which nothing can
+                        escape</label><br>
+
+                    <input type="checkbox" id="answer_18_option_2" name="answer_18"
+                        value="The center of the black hole">
+                    <label for="answer_18_option_2" id="answer_18_option_2_label">The center of the black
+                        hole</label><br>
+
+                    <input type="checkbox" id="answer_18_option_3" name="answer_18"
+                        value="The outer edge of the black hole">
+                    <label for="answer_18_option_3" id="answer_18_option_3_label">The outer edge of the black
+                        hole</label><br>
+
+                    <input type="checkbox" id="answer_18_option_4" name="answer_18"
+                        value="The data layer of the black hole">
+                    <label for="answer_18_option_4" id="answer_18_option_4_label">The data layer of the black
+                        hole</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="qa_container">
+            <div class="qa_subcontainer qa_section qa_hidden" id="qa_section_19">
+                <h6 id="question_19_type">text</h6>
+                <p id="question_19">Who formulated the laws of planetary motion ?</p>
+                <div id="answer_19">
+                    <input type="text" id="answer_19" name="answer_19">
+                </div>
+            </div>
+        </div>
+
         <div>
             <p id="page_counter"></p>
         </div>
@@ -73,6 +386,6 @@
             <button type="button" id="retake_button" onclick="startQuiz()">Retake Test</button>
         </div>
     </div>
-</body>
+    </body>
 
 </html>

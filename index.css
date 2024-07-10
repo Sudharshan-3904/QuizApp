@@ -1,8 +1,34 @@
 body {
-    background-image: url("./images/cosmos-1853491.jpg");
+    background-image: url("../images/cosmos-1853491.jpg");
     background-size: cover;
     background-position: center;
     color: beige;
+    margin: 3px;
+    padding: 5px;
+}
+
+h6 {
+    display: none;
+}
+
+div.qa_shown {
+    display: block;
+    visibility: visible;
+}
+
+div.qa_hidden {
+    display: none;
+    visibility: hidden;
+    box-shadow: none;
+    border: none;
+    background: none;
+}
+
+div.qa_subcontainer {
+    text-align: left;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
 }
 
 div#start_screen {
@@ -66,21 +92,8 @@ div#qa_container {
     border: 1px solid rgba(255, 255, 255, 0.62);
 }
 
-div.qa_section {
-    text-align: left;
-    border-radius: 10px;
-    margin: 2px;
-    padding: 2px;
-    /* background: rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.4px);
-    -webkit-backdrop-filter: blur(5.4px);
-    border: 1px solid rgba(255, 255, 255, 0.62); */
-}
-
 select {
-    width: 300px;
+    width: min-content;
 }
 
 #end_screen {
