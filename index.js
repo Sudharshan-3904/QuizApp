@@ -42,33 +42,43 @@ function checkAns(quesInd) {
     let current_answers = [];
 
     if (current_type === "text") {
-        current_answer = document.getElementById(`answer_${quesInd}`).firstChild.value;
-        if (current_answer === quiz_answers[quesInd]) {
+        // TEXT NOT WORKING
+        current_answer = document.getElementById(`answer_${quesInd}`);
+        // console.log(document.getElementById(`answer_${quesInd}`));
+        // console.log(`ans : ${quiz_answers[quesInd]} : ins : ${current_answer}`);
+        if (current_answer == quiz_answers[quesInd]) {
             user_score++;
         }
     } else if (current_type === "radio") {
+        // Radio Buttons Working
         let options = document.getElementsByName(`answer_${quesInd}`);
         for (let option of options) {
             if (option.checked) {
                 current_answer = option.value;
             }
         }
-        if (current_answer === quiz_answers[quesInd]) {
+        // console.log(`ans : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
+        if (current_answer == quiz_answers[quesInd]) {
             user_score++;
         }
     } else if (current_type === "checkbox") {
+        // Check Box Working
         let options = document.getElementsByName(`answer_${quesInd}`);
         for (let option of options) {
             if (option.checked) {
                 current_answers.push(option.value);
             }
         }
+        // console.log(`ans : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
+        // console.log(isEqual(quiz_answers[quesInd], current_answers));
         if (isEqual(quiz_answers[quesInd], current_answers)) {
             user_score++;
         }
     } else if (current_type === "dropdown") {
+        // DROPDOWN NOT WORKING
         current_answer = document.getElementById(`answer_${quesInd}`).value;
-        if (current_answer === quiz_answers[quesInd]) {
+        console.log(`ans : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
+        if (current_answer == quiz_answers[quesInd]) {
             user_score++;
         }
     }
@@ -120,7 +130,7 @@ function prevQues() {
 }
 
 function nextQues() {
-    if ((page_number + 2) <= Math.floor(total_question / questions_per_page)) {
+    if (page_number + 2 <= Math.floor(total_question / questions_per_page)) {
         page_number++;
         min_dis_ind += questions_per_page;
         max_dis_ind += questions_per_page;
@@ -131,6 +141,9 @@ function nextQues() {
 }
 
 function startQuiz() {
+    page_number = 0;
+    min_dis_ind = 0;
+    max_dis_ind = questions_per_page;
     startCountdown(300);
     document.getElementById("start_screen").style.display = "none";
     document.getElementById("mainBox").style.display = "block";
@@ -160,6 +173,10 @@ function show_current_question() {
     for (let current_index = min_dis_ind; current_index < max_dis_ind; current_index++) {
         document.getElementById(`qa_section_${current_index}`).classList.remove("qa_hidden");
     }
+
+    document.getElementById("page_counter").innerHTML = `${page_number + 1} / ${Math.floor(
+        total_question / questions_per_page
+    )}`;
 }
 
 function end_screen() {
@@ -171,5 +188,4 @@ function end_screen() {
     document.getElementById("retake_button").style.display = "block";
     document.getElementById("end_screen").style.display = "block";
     document.getElementById("user_score").innerHTML = `Your score is ${user_score}/${total_question}`;
-    document.getElementById("user_info").innerHTML = "";
 }

@@ -3,7 +3,8 @@ body {
     background-size: cover;
     background-position: center;
     color: #f0f0f0;
-    margin: 0;
+    margin-left: 1dvw;
+    margin-right: 1dvw;
     padding: 0;
 }
 
@@ -16,14 +17,6 @@ h1 {
     font-size: 3rem;
     text-align: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    color: #ffffff;
-    padding: 20px;
 }
 
 /* div.qa_shown {
@@ -44,21 +37,24 @@ div.qa_subcontainer {
     border-radius: 10px;
     margin: 10px 0;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(255, 255, 255, 0.66);
 }
 
 div#start_screen {
     font-size: 2rem;
     text-align: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.19);
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(255, 255, 255, 0.66);
     padding: 20px;
 }
 
@@ -67,15 +63,13 @@ button#start_quiz_button {
     text-align: center;
     align-items: center;
     margin: 10px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.19);
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(255, 255, 255, 0.66);
     padding: 10px 20px;
-    cursor: pointer;
 }
 
 div#mainBox {
@@ -109,15 +103,13 @@ button {
     cursor: pointer;
 }
 
-div#qa_container {
-    background: rgba(0, 0, 0, 0.6);
+div.qa_container {
+    background: rgba(255, 255, 255, 0.19);
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(255, 255, 255, 0.66);
 }
 
 select {
@@ -129,14 +121,24 @@ select {
     padding: 5px;
 }
 
+div#end_screen,
+div#nav,
+div#page_counter_container {
+    text-align: center;
+    justify-content: center;
+}
+
 #end_screen {
     font-size: 2rem;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
     align-items: center;
     text-align: center;
     display: none;
     justify-content: center;
     position: absolute;
-    width: 100%;
+    width: 90dvw;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -150,7 +152,7 @@ select {
 #retake_button {
     font-size: 1.3rem;
     position: sticky;
-    left: 75%;
+    left: 90%;
     bottom: 5px;
     margin: 10px;
     background: rgba(0, 0, 0, 0.7);
