@@ -42,43 +42,37 @@ function checkAns(quesInd) {
     let current_answers = [];
 
     if (current_type === "text") {
-        // TEXT NOT WORKING
-        current_answer = document.getElementById(`answer_${quesInd}`);
-        // console.log(document.getElementById(`answer_${quesInd}`));
-        // console.log(`ans : ${quiz_answers[quesInd]} : ins : ${current_answer}`);
-        if (current_answer == quiz_answers[quesInd]) {
+        current_answer = document.getElementById(`answer_${quesInd}`).value;
+        console.log(`inp : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
+        console.log(isEqual(quiz_answers[quesInd], current_answers));
+        if (current_answer === quiz_answers[quesInd]) {
             user_score++;
         }
     } else if (current_type === "radio") {
-        // Radio Buttons Working
         let options = document.getElementsByName(`answer_${quesInd}`);
         for (let option of options) {
             if (option.checked) {
                 current_answer = option.value;
             }
         }
-        // console.log(`ans : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
         if (current_answer == quiz_answers[quesInd]) {
             user_score++;
         }
     } else if (current_type === "checkbox") {
-        // Check Box Working
         let options = document.getElementsByName(`answer_${quesInd}`);
         for (let option of options) {
             if (option.checked) {
                 current_answers.push(option.value);
             }
         }
-        // console.log(`ans : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
-        // console.log(isEqual(quiz_answers[quesInd], current_answers));
         if (isEqual(quiz_answers[quesInd], current_answers)) {
             user_score++;
         }
     } else if (current_type === "dropdown") {
-        // DROPDOWN NOT WORKING
         current_answer = document.getElementById(`answer_${quesInd}`).value;
-        console.log(`ans : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
-        if (current_answer == quiz_answers[quesInd]) {
+        console.log(`inp : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
+        console.log(current_answer == quiz_answers[quesInd]);
+        if (current_answer === quiz_answers[quesInd]) {
             user_score++;
         }
     }
@@ -125,7 +119,7 @@ function prevQues() {
         max_dis_ind -= questions_per_page;
         show_current_question();
     } else {
-        document.getElementById("user_info").innerHTML = "This is the first Page";
+        page_number = 0;
     }
 }
 
@@ -138,6 +132,10 @@ function nextQues() {
     } else {
         end_quiz();
     }
+}
+
+function retake_test() {
+    window.location.reload();
 }
 
 function startQuiz() {
@@ -158,7 +156,7 @@ function end_quiz() {
 }
 
 function show_current_question() {
-    if (page_number === 0) {
+    if (page_number == 0) {
         document.getElementById("previous_button").style.display = "none";
     } else {
         document.getElementById("previous_button").style.display = "inline";

@@ -47,7 +47,7 @@
                 <h6 id="question_1_type">dropdown</h6>
                 <p id="question_1">What is a light year ?</p>
                 <div id="answer_1">
-                    <select id="answer_1" name="answer_1">
+                    <select id="answer_1">
                         <option id="answer_1_option_1" value="The time it takes for light to travel around the Earth">
                             The time it takes for light to travel around the Earth</option>
                         <option id="answer_1_option_2" value="The distance light travels in one year">The distance light
@@ -86,7 +86,7 @@
                 <h6 id="question_3_type">text</h6>
                 <p id="question_3">What is the name of our galaxy ?</p>
                 <div id="answer_3">
-                    <input type="text" id="answer_3" name="answer_3">
+                    <input type="text" id="answer_3">
                 </div>
             </div>
         </div>
@@ -116,7 +116,7 @@
                 <h6 id="question_5_type">dropdown</h6>
                 <p id="question_5">What is dark matter ?</p>
                 <div id="answer_5">
-                    <select id="answer_5" name="answer_5">
+                    <select id="answer_5">
                         <option id="answer_5_option_1" value="A type of black hole">
                             A type of black hole</option>
                         <option id="answer_5_option_2" value="Invisible matter that doesn't emit light">Invisible matter
@@ -153,7 +153,7 @@
                 <h6 id="question_7_type">text</h6>
                 <p id="question_7">What is the fabric of the universe ?</p>
                 <div id="answer_7">
-                    <input type="text" id="answer_7" name="answer_7">
+                    <input type="text" id="answer_7">
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@
                 <h6 id="question_9_type">dropdown</h6>
                 <p id="question_9">What is the cosmic microwave background radiation ?</p>
                 <div id="answer_9">
-                    <select id="answer_9" name="answer_9">
+                    <select id="answer_9">
                         <option id="answer_9_option_1" value="Radiation from stars">
                             Radiation from stars</option>
                         <option id="answer_9_option_2" value="Leftover radiation from the Big Bang">Leftover radiation
@@ -222,7 +222,7 @@
                 <h6 id="question_11_type">text</h6>
                 <p id="question_11">What is the approximate age of the universe ?</p>
                 <div id="answer_11">
-                    <input type="text" id="answer_11" name="answer_11">
+                    <input type="text" id="answer_11">
                 </div>
             </div>
         </div>
@@ -252,7 +252,7 @@
                 <h6 id="question_13_type">dropdown</h6>
                 <p id="question_13">What is a supernova ?</p>
                 <div id="answer_13">
-                    <select id="answer_13" name="answer_13">
+                    <select id="answer_13">
                         <option id="answer_13_option_1" value="A new star forming">
                             A new star forming</option>
                         <option id="answer_13_option_2" value="The explosion of a star">The explosion of a star</option>
@@ -270,8 +270,10 @@
                 <h6 id="question_14_type">checkbox</h6>
                 <p id="question_14">What is Gargantua ?</p>
                 <div id="answer_14">
-                    <input type="checkbox" id="answer_14_option_1" name="answer_14" value="A distant, active galactic nucleus">
-                    <label for="answer_14_option_1" id="answer_14_option_1_label">A distant, active galactic nucleus</label><br>
+                    <input type="checkbox" id="answer_14_option_1" name="answer_14"
+                        value="A distant, active galactic nucleus">
+                    <label for="answer_14_option_1" id="answer_14_option_1_label">A distant, active galactic
+                        nucleus</label><br>
 
                     <input type="checkbox" id="answer_14_option_2" name="answer_14" value="A Measure of black hole">
                     <label for="answer_14_option_2" id="answer_14_option_2_label">A Measure of black hole</label><br>
@@ -290,7 +292,7 @@
                 <h6 id="question_15_type">text</h6>
                 <p id="question_15">What force holds galaxies together ?</p>
                 <div id="answer_15">
-                    <input type="text" id="answer_15" name="answer_15">
+                    <input type="text" id="answer_15">
                 </div>
             </div>
         </div>
@@ -320,7 +322,7 @@
                 <h6 id="question_17_type">dropdown</h6>
                 <p id="question_17">What are the main components of stars ?</p>
                 <div id="answer_17">
-                    <select id="answer_17" name="answer_17">
+                    <select id="answer_17">
                         <option id="answer_17_option_1" value="Hydrogen">
                             Hydrogen</option>
                         <option id="answer_17_option_2" value="Helium">Helium</option>
@@ -366,7 +368,7 @@
                 <h6 id="question_19_type">text</h6>
                 <p id="question_19">Who formulated the laws of planetary motion ?</p>
                 <div id="answer_19">
-                    <input type="text" id="answer_19" name="answer_19">
+                    <input type="text" id="answer_19">
                 </div>
             </div>
         </div>
@@ -382,7 +384,7 @@
         <br>
         <div id="end_screen">
             <div id="user_score"></div>
-            <button type="button" id="retake_button" onclick="startQuiz()">Retake Test</button>
+            <button type="button" id="retake_button" onclick="retake_test()">Retake Test</button>
         </div>
     </div>
     </body>
