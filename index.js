@@ -43,8 +43,6 @@ function checkAns(quesInd) {
 
     if (current_type === "text") {
         current_answer = document.getElementById(`answer_${quesInd}`).value;
-        console.log(`inp : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
-        console.log(isEqual(quiz_answers[quesInd], current_answers));
         if (current_answer === quiz_answers[quesInd]) {
             user_score++;
         }
@@ -69,9 +67,7 @@ function checkAns(quesInd) {
             user_score++;
         }
     } else if (current_type === "dropdown") {
-        current_answer = document.getElementById(`answer_${quesInd}`).value;
-        console.log(`inp : ${current_answer} : ans : ${quiz_answers[quesInd]}`);
-        console.log(current_answer == quiz_answers[quesInd]);
+        current_answer = document.getElementById('answer_' + quesInd).value;
         if (current_answer === quiz_answers[quesInd]) {
             user_score++;
         }
